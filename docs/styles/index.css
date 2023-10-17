@@ -3,9 +3,9 @@
   }
   
   :root {
-    --clr-light:rgb(13,17,19);
-    --clr-dark:#fff;
-    --clr-secondary:#0A84FF;
+    --clr-light: rgb(13, 17, 19);
+    --clr-dark: #fff;
+    --clr-secondary: #0A84FF;
   }
   
   body {
@@ -42,8 +42,9 @@
   
   .streamers {
     display: flex;
-    text-align: center;
+    justify-content: center; /* Text align changed to justify-content for Safari compatibility */
   }
+  
   .streamers img {
     width: 2rem;
     height: 2rem;
@@ -51,26 +52,33 @@
   }
   
   .front {
-    transition: 200ms;
+    transition: transform 200ms; /* Added property name for clarity */
   }
+  
   .front > img {
     border-radius: 12px;
   }
+  
   .front .name {
     margin: 0.75em 0;
+    text-align: center; /* Explicit text alignment added for Safari */
   }
+  
   .front .status {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+  
   .front .streamers img {
     border: 1px solid var(--clr-dark);
   }
+  
   .front .streamers img:nth-child(1) {
     z-index: 1;
     transform: translateX(15px);
   }
+  
   .front .streamers img:nth-child(2) {
     transform: translateX(10px);
   }
@@ -86,20 +94,25 @@
     align-items: center;
     gap: 1em;
   }
+  
   .back .streaming-info {
     columns: 2;
     column-rule: 1px solid rgba(255, 255, 255, 0.6);
   }
+  
   .back .game-stat {
     font-size: 1.2rem;
     text-align: center;
   }
+  
   .back .game-stat span {
     display: block;
     font-size: 0.8rem;
   }
+  
   .back .streamers {
     display: flex;
+    justify-content: center; /* Text align changed to justify-content for Safari compatibility */
   }
   
   .backgroundWrapper {
@@ -118,29 +131,39 @@
   .game:hover .front {
     transform: translateY(-25%) scale(0.8);
   }
+  
   .game:hover .front .name {
     animation: gameName 150ms forwards;
+    text-align: center; /* Explicit text alignment added for Safari */
   }
+  
   .game:hover .front .status {
     opacity: 0;
   }
+  
   .game:hover .back {
     opacity: 1;
   }
+  
   .game:hover .back .streamers {
     width: 100%;
     justify-content: space-between;
   }
+  
   .game:hover .back .streamer {
     font-size: 0.9rem;
+    font-weight: normal; /* To reset bold weight */
   }
+  
   .game:hover .back .name {
     font-weight: bold;
   }
+  
   .game:hover .rank {
     top: -35px;
     right: -30px;
   }
+  
   .game:hover .backgroundWrapper {
     transition: transform 200ms ease-in-out, opacity 100ms linear;
     opacity: 1;
@@ -176,3 +199,4 @@
       opacity: 1;
     }
   }
+  
